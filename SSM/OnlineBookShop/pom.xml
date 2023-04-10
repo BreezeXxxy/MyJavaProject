@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>per.xy</groupId>
+  <artifactId>OnlineBookShop</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>OnlineBookShop Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+<!--      SSM共24个+1拼音-->
+<!--    1.1 单元测试框架，maen创建时自动引入-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+<!--    1.2、用来做测试，spring和junit的完美结合-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>5.0.2.RELEASE</version>
+    </dependency>
+<!--    1.3、进行数据库连接-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.44</version>
+    </dependency>
+
+    <!--    Spring相关依赖-->
+<!--    2.1 spring核心依赖：spring其他组件都要用到该类库中的类，所有功能都依赖该类库，主要提供IOC、DI，spring的所有功能都是借助IOC实现。-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>5.0.2.RELEASE</version>
+    </dependency>
+<!--    2.2、spring_ioc相关依赖：包含访问配置文件、创建管理bean操作相关的所有类。-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>5.0.2.RELEASE</version>
+    </dependency>
+<!--    2.3、spring_上下文依赖：为Spring 核心提供了大量扩展。可以找到使用Spring ApplicationContext特性时所需的全部类
+                             普通java工程使用spring框架只需要这个依赖。-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.0.2.RELEASE</version>
+    </dependency>
+<!--    2.4、spring_对象关系映射依赖：对Dao特性层进行扩展。-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>5.0.2.RELEASE</version>
+    </dependency>
+<!--      2.5、spring_事务管理依赖：Spring 为 DB 事务管理提供过的一种便捷的接入方式-->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-tx</artifactId>
+          <version>5.0.2.RELEASE</version>
+      </dependency>
+<!--      2.6、spring_Aop相关依赖-->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aspects</artifactId>
+          <version>5.0.2.RELEASE</version>
+      </dependency>
+<!--      2.7、spring_Web相关依赖:如果是web项目，只需要引入这一个依赖。-->
+      <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>5.0.2.RELEASE</version>
+  </dependency>
+
+<!--      Mybatis相关依赖-->
+<!--      3.1、mybatis依赖-->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis</artifactId>
+          <version>3.4.5</version>
+      </dependency>
+<!--      3.2、Mybatis和Spring继承相关依赖-->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis-spring</artifactId>
+          <version>1.3.1</version>
+      </dependency>
+<!--      3.3 数据库连接池依赖-->
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-dbcp2</artifactId>
+          <version>2.1.1</version>
+      </dependency>
+<!--      3.4、对象池管理依赖：面向接口编程，为我们提供一个抽象的对象池管理。-->
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-pool2</artifactId>
+          <version>2.4.3</version>
+      </dependency>
+
+<!--      日志log4j相关依赖 2-->
+<!--      4.1 日志核心依赖-->
+      <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-core</artifactId>
+          <version>2.9.1</version>
+      </dependency>
+<!--      4.2-->
+      <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-api</artifactId>
+          <version>2.9.1</version>
+      </dependency>
+<!--      4.3、log4jweb相关依赖-->
+      <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-web</artifactId>
+          <version>2.9.1</version>
+      </dependency>
+
+<!--      5.分页帮助依赖-->
+      <dependency>
+          <groupId>com.github.pagehelper</groupId>
+          <artifactId>pagehelper</artifactId>
+          <version>5.1.2</version>
+      </dependency>
+
+<!--      6、servlet依赖-->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>4.0.0</version>
+          <scope>provided</scope>
+      </dependency>
+
+<!--      7、注解式开发依赖-->
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.18.2</version>
+          <scope>provided</scope>
+      </dependency>
+
+<!--      springMVC相关依赖-->
+<!--      8.1、springMVC依赖-->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-webmvc</artifactId>
+          <version>5.0.2.RELEASE</version>
+      </dependency>
+<!--      8.2、jstl标签语言依赖-->
+      <dependency>
+          <groupId>jstl</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
+      </dependency>
+<!--      8.3、taglib标准标签库依赖-->
+      <dependency>
+          <groupId>taglibs</groupId>
+          <artifactId>standard</artifactId>
+          <version>1.1.2</version>
+      </dependency>
+
+<!--      解析Json相关依赖-->
+<!--      9.1、jackson_数据绑定依赖-->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.9.3</version>
+      </dependency>
+<!--      9.2、jackson_核心依赖-->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+          <version>2.9.3</version>
+      </dependency>
+<!--      9.3、jackson注解依赖-->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-annotations</artifactId>
+          <version>2.9.3</version>
+      </dependency>
+
+<!--      10.扩展：中文转拼音依赖-->
+      <!-- https://mvnrepository.com/artifact/com.belerweb/pinyin4j -->
+      <dependency>
+          <groupId>com.belerweb</groupId>
+          <artifactId>pinyin4j</artifactId>
+          <version>2.5.1</version>
+      </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>OnlineBookShop</finalName>
+<!--      进行Mybatis自动化生成需要的插件-->
+      <plugins>
+          <plugin>
+              <groupId>org.mybatis.generator</groupId>
+              <artifactId>mybatis-generator-maven-plugin</artifactId>
+              <version>1.3.2</version>
+              <dependencies>
+                  <dependency>
+                      <groupId>mysql</groupId>
+                      <artifactId>mysql-connector-java</artifactId>
+                      <version>5.1.44</version>
+                  </dependency>
+              </dependencies>
+              <configuration>
+                  <overwrite>true</overwrite>
+              </configuration>
+          </plugin>
+      </plugins>
+  </build>
+</project>
